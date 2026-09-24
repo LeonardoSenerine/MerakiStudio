@@ -117,7 +117,8 @@ export type PortfolioItem = {
   image: string
 }
 
-export const portfolioHighlights = [1, 2, 4, 5, 6, 3]
+// Os destaques grandes (1º e 5º) precisam de fotos com boa resolução original
+export const portfolioHighlights = [16, 2, 4, 5, 6, 3]
 
 export const portfolio: PortfolioItem[] = [
   { id: 1, title: 'Palhaços e Coringa', style: 'Realismo · Tronco', image: img('torso-palhacos-coringa') },
