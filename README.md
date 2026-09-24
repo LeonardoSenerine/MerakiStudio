@@ -36,7 +36,7 @@ Feito com **React 19 + TypeScript + Vite**. É um site estático de uma página:
 
 **Fotografia real.** Só fotos do estúdio, da barbearia e de trabalhos reais. As que vieram pequenas passaram por super-resolução com IA, misturada com a versão original para não criar pele de plástico, e nenhuma aparece maior do que aguenta.
 
-**Técnico.** React 19 + TypeScript + Vite, componentes pequenos e todo o conteúdo em um arquivo de dados. SEO com dados estruturados (estúdio de tatuagem e barbearia), sitemap, robots e imagem de compartilhamento gerados no build com o endereço correto.
+**Técnico.** React 19 + TypeScript + Vite, componentes pequenos e todo o conteúdo em um arquivo de dados. **O HTML é pré-renderizado no build** (`src/entry-server.tsx` + `scripts/prerender.mjs`): buscadores, prévias de link e leitores de tela recebem a página completa sem precisar rodar JavaScript, e o React só assume a página no navegador (hidratação). SEO com dados estruturados (estúdio de tatuagem e barbearia), sitemap, robots e imagem de compartilhamento gerados no build com o endereço correto.
 
 ## Rodar no computador
 

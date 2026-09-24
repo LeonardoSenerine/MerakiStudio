@@ -11,10 +11,13 @@ type Props = {
 const MOBILE = '(max-width: 640px)'
 
 function useIsMobile() {
-  const [mobile, setMobile] = useState(() => window.matchMedia(MOBILE).matches)
+  // Começa como "computador" (é assim que o HTML é pré-renderizado no build)
+  // e ajusta ao tamanho real da tela assim que a página carrega.
+  const [mobile, setMobile] = useState(false)
   useEffect(() => {
     const mq = window.matchMedia(MOBILE)
     const onChange = () => setMobile(mq.matches)
+    onChange()
     mq.addEventListener('change', onChange)
     return () => mq.removeEventListener('change', onChange)
   }, [])
