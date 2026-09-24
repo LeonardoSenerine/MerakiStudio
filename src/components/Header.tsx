@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { studio } from '../data/studio'
+import { booking, useBookingKind } from '../hooks/useBooking'
 import { Wordmark } from './Wordmark'
 
 const leftLinks = [
@@ -17,6 +18,7 @@ const rightLinks = [
 export function Header() {
   const [open, setOpen] = useState(false)
   const close = () => setOpen(false)
+  const kind = useBookingKind()
 
   // Com o menu aberto no celular, a página de trás não rola
   useEffect(() => {
@@ -31,16 +33,18 @@ export function Header() {
           {leftLinks.map((l) => <a key={l.href} href={l.href}>{l.label}</a>)}
         </nav>
 
-        <a href="#inicio" className="logo" aria-label={`${studio.name} ${studio.subtitle} Studio`}>
+        <a href="#inicio" className="logo" aria-label={studio.brand}>
           <Wordmark />
-          <small>{studio.subtitle} studio</small>
+          <small>{studio.subtitle}</small>
         </a>
 
         <div className="header__right">
           <nav className="nav">
             {rightLinks.map((l) => <a key={l.href} href={l.href}>{l.label}</a>)}
           </nav>
-          <a href="#agendar" className="btn btn--accent btn--small header__cta">Agendar horário</a>
+          <a href={booking[kind].href} target="_blank" rel="noreferrer" className="btn btn--accent btn--small header__cta">
+            {booking[kind].label}
+          </a>
         </div>
 
         <button
@@ -59,7 +63,12 @@ export function Header() {
           {[...leftLinks, ...rightLinks].map((l) => (
             <a key={l.href} href={l.href} onClick={close}>{l.label}</a>
           ))}
-          <a href="#agendar" onClick={close} className="btn btn--accent mobile-nav__cta">Agendar pelo WhatsApp</a>
+          <a href={booking.tatuagem.href} target="_blank" rel="noreferrer" onClick={close} className="btn btn--accent mobile-nav__cta">
+            {booking.tatuagem.label} →
+          </a>
+          <a href={booking.barbearia.href} target="_blank" rel="noreferrer" onClick={close} className="btn mobile-nav__cta mobile-nav__cta--secondary">
+            {booking.barbearia.label} →
+          </a>
         </nav>
       )}
     </header>

@@ -573,10 +573,12 @@ p {
 }
 
 /* As fotos originais são pequenas: acima disso só ficariam mais borradas */
+/* Todas as fotos ampliadas ocupam o mesmo quadro (4:5), sem cortar o trabalho */
 .lightbox__figure img {
-  max-width: min(100%, 560px);
-  max-height: min(78vh, 700px);
+  width: min(100%, 520px, calc(72vh * 0.8));
+  aspect-ratio: 4 / 5;
   object-fit: contain;
+  background: #0d0d0d;
 }
 
 .lightbox__figure figcaption {
@@ -1510,4 +1512,14 @@ p {
   .works-grid {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+/* Botões de agendamento do menu do celular */
+.mobile-nav .mobile-nav__cta--secondary {
+  margin-top: 0.75rem;
+  border: 1px solid rgba(242, 239, 233, 0.4);
+}
+
+.barber-works__cta .btn {
+  font-size: 0.78rem;
 }

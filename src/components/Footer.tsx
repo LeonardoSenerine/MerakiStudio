@@ -1,4 +1,5 @@
-import { mapsUrl, studio } from '../data/studio'
+import { barbershop, mapsUrl, studio } from '../data/studio'
+import { booking } from '../hooks/useBooking'
 import { Wordmark } from './Wordmark'
 
 export function Footer() {
@@ -10,7 +11,7 @@ export function Footer() {
         <div className="footer__info">
           <div className="logo logo--footer">
             <Wordmark />
-            <small>{studio.subtitle} studio</small>
+            <small>{studio.subtitle}</small>
           </div>
 
           <dl className="footer__contact">
@@ -19,12 +20,20 @@ export function Footer() {
               <dd><a href={mapsUrl} target="_blank" rel="noreferrer">{studio.address}</a></dd>
             </div>
             <div>
-              <dt>WhatsApp</dt>
-              <dd><a href={`https://wa.me/${studio.whatsapp}`} target="_blank" rel="noreferrer">{studio.phone}</a></dd>
+              <dt>Tatuagem</dt>
+              <dd>
+                <a href={booking.tatuagem.href} target="_blank" rel="noreferrer">WhatsApp {studio.phone}</a>
+                {' · '}
+                <a href={`https://instagram.com/${studio.instagram}`} target="_blank" rel="noreferrer">@{studio.instagram}</a>
+              </dd>
             </div>
             <div>
-              <dt>Instagram</dt>
-              <dd><a href={`https://instagram.com/${studio.instagram}`} target="_blank" rel="noreferrer">@{studio.instagram}</a></dd>
+              <dt>Barbearia</dt>
+              <dd>
+                <a href={booking.barbearia.href} target="_blank" rel="noreferrer">Agenda online</a>
+                {' · '}
+                <a href={`https://www.instagram.com/${barbershop.instagram}/`} target="_blank" rel="noreferrer">@{barbershop.instagram}</a>
+              </dd>
             </div>
             <div>
               <dt>Horário</dt>
@@ -41,7 +50,7 @@ export function Footer() {
         />
       </div>
 
-      <p className="footer__copy">© {new Date().getFullYear()} {studio.name} {studio.subtitle} Studio, Itatiba/SP</p>
+      <p className="footer__copy">© {new Date().getFullYear()} {studio.brand}, Itatiba/SP</p>
     </footer>
   )
 }

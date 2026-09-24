@@ -5,7 +5,9 @@ const img = (file: string) => `/images/${file}.webp`
 
 export const studio = {
   name: 'Meraki',
-  subtitle: 'Tattoo',
+  // Nome do espaço (como no letreiro da recepção): tatuagem e barbearia no mesmo endereço
+  brand: 'Meraki Galleria Shop',
+  subtitle: 'Galleria Shop',
   // Voz da marca: poucas palavras, frases fortes
   location: 'Centro de Itatiba · SP',
   statement: ['Seu visual não é detalhe.', 'É presença.'],
@@ -28,8 +30,9 @@ export const studio = {
   bookingImage: img('estudio-sala-espera'),
   address: 'R. Rangel Pestana, 39, Centro, Itatiba/SP',
   hours: 'Somente com hora marcada',
-  phone: '(11) 94391-6772',
-  whatsapp: '5511943916772',
+  // WhatsApp de agendamento da tatuagem (link da bio do Instagram)
+  phone: '(11) 95664-7982',
+  whatsapp: '5511956647982',
   instagram: 'meraki.tattoobr',
 }
 
@@ -109,6 +112,8 @@ export type BarberWork = PortfolioItem & { category: 'Locs e tranças' | 'Corte 
 
 export const barbershop = {
   name: 'Meraki Barbearia',
+  // Agenda online da barbearia (link da bio do Instagram)
+  bookingUrl: 'https://agendeonline.salonsoft.com.br/barbeariameraki',
   instagram: 'barbeariameraki_',
   tagline: 'A barbearia da Meraki, no mesmo endereço.',
   specialties: 'Locs · Tranças · Corte · Barba',

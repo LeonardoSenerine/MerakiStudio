@@ -1,4 +1,5 @@
-import { studio, whatsappLink } from '../data/studio'
+import { studio } from '../data/studio'
+import { booking } from '../hooks/useBooking'
 import { RotatingPanels } from './RotatingPanels'
 import { Wordmark } from './Wordmark'
 
@@ -16,7 +17,7 @@ export function Hero() {
         <p className="hero__kicker intro" style={delay(200)}>{studio.location}</p>
         <h1 className="hero__title">
           <Wordmark animated delay={400} />
-          <span className="intro" style={delay(1500)}>Tatuagem &amp; Barbearia</span>
+          <span className="intro" style={delay(1500)}>{studio.subtitle}</span>
         </h1>
         <p className="hero__statement intro" style={delay(1800)}>
           {studio.statement[0]}
@@ -25,10 +26,12 @@ export function Hero() {
         </p>
         <p className="hero__offer intro" style={delay(2000)}>{studio.offer}</p>
         <div className="hero__actions intro" style={delay(2200)}>
-          <a href={whatsappLink('Olá! Quero agendar um horário na Meraki.')} target="_blank" rel="noreferrer" className="btn btn--accent">
-            Agendar horário →
+          <a href={booking.tatuagem.href} target="_blank" rel="noreferrer" className="btn btn--accent">
+            {booking.tatuagem.label} →
           </a>
-          <a href="#tatuagens" className="text-link">Ver trabalhos</a>
+          <a href={booking.barbearia.href} target="_blank" rel="noreferrer" className="btn">
+            {booking.barbearia.label} →
+          </a>
         </div>
       </div>
     </section>

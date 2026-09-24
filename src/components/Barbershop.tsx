@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { barber, barbershop, whatsappLink, type BarberWork } from '../data/studio'
+import { barber, barbershop, type BarberWork } from '../data/studio'
 import { Lightbox } from './Lightbox'
 import { RotatingPanels } from './RotatingPanels'
 import { SpaceSection } from './SpaceSection'
@@ -12,7 +12,6 @@ export function Barbershop() {
   const [filter, setFilter] = useState<(typeof FILTERS)[number]>('Todos')
   const [open, setOpen] = useState<number | null>(null)
   const works: BarberWork[] = filter === 'Todos' ? barbershop.works : barbershop.works.filter((w) => w.category === filter)
-  const whatsapp = whatsappLink('Olá, Bruno! Quero agendar um horário na barbearia.')
 
   return (
     <div className="barbershop">
@@ -35,7 +34,7 @@ export function Barbershop() {
             <h2>{barber.name}</h2>
             <p className="profile-statement">{barber.statement}</p>
             <blockquote className="barber-profile__quote">“{barber.quote}”</blockquote>
-            <a href={whatsapp} target="_blank" rel="noreferrer" className="btn btn--accent">Agendar com o Bruno →</a>
+            <a href={barbershop.bookingUrl} target="_blank" rel="noreferrer" className="btn btn--accent">Agendar com o Bruno →</a>
           </div>
           <div className="barber-profile__portrait" data-reveal="wipe">
             <img src={barber.image} alt={`${barber.name} sentado na porta de um carro`} />
@@ -85,6 +84,12 @@ export function Barbershop() {
             >
               Ver mais
               <small>@{barbershop.instagram}</small>
+            </a>
+          </p>
+
+          <p className="barber-works__cta">
+            <a href={barbershop.bookingUrl} target="_blank" rel="noreferrer" className="btn btn--accent">
+              Agendar na barbearia →
             </a>
           </p>
 

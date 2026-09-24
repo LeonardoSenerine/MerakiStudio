@@ -83,7 +83,7 @@ def main():
     cx = W / 2
 
     wordmark(draw, cx, 150 * S, 620 * S)
-    spaced(draw, cx, 352 * S, 'TATTOO STUDIO', font('segoeuib.ttf', 26), GOLD_LIGHT, 16 * S)
+    spaced(draw, cx, 352 * S, 'GALLERIA SHOP', font('segoeuib.ttf', 26), GOLD_LIGHT, 16 * S)
 
     # Linha fina dourada
     draw.line((cx - 60 * S, 418 * S, cx + 60 * S, 418 * S), fill=GOLD, width=2 * S)
@@ -92,7 +92,7 @@ def main():
     t = '3x eleito o melhor estúdio de Itatiba'
     draw.text((cx - draw.textlength(t, font=tagline) / 2, 442 * S), t, font=tagline, fill=TEXT)
 
-    spaced(draw, cx, 510 * S, 'ESPECIALISTA EM PRETO E BRANCO  ·  ITATIBA/SP',
+    spaced(draw, cx, 510 * S, 'TATUAGEM  ·  BARBEARIA  ·  CENTRO DE ITATIBA/SP',
            font('segoeui.ttf', 17), (170, 164, 155), 4 * S)
 
     bg.resize((1200, 630), Image.LANCZOS).save(OUT, 'JPEG', quality=88, optimize=True, progressive=True)

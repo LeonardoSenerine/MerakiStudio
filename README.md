@@ -1,6 +1,6 @@
-# Meraki Tattoo Studio
+# Meraki Galleria Shop
 
-Site da **Meraki Tattoo Studio**, estúdio de tatuagem privado no centro de Itatiba/SP, especializado em preto e branco. No mesmo endereço funciona a **Meraki Barbearia**, do Bruno Vieira.
+Site da **Meraki Galleria Shop**, no centro de Itatiba/SP: estúdio de tatuagem privado, especializado em preto e branco, e a **Meraki Barbearia**, do Bruno Vieira, no mesmo endereço.
 
 Feito com **React 19 + TypeScript + Vite**. É um site estático de uma página: não precisa de servidor nem de banco de dados.
 
@@ -27,9 +27,9 @@ Feito com **React 19 + TypeScript + Vite**. É um site estático de uma página:
 
 **Ordem da página.** Marca → atmosfera → profissional → trabalho → serviços → prova → agendamento. Primeiro o visitante entende onde está e com quem vai falar; o serviço vem depois, para a Meraki não virar um cardápio.
 
-**Primeiros 3 segundos.** Sem rolar, o celular mostra: o nome, o que é ("Tatuagem & Barbearia"), onde fica ("Centro de Itatiba · SP"), o que oferece e o botão de agendar.
+**Primeiros 3 segundos.** Sem rolar, o celular mostra: o nome ("Meraki Galleria Shop"), o que é ("Tatuagem, locs, tranças, corte e barba"), onde fica ("Centro de Itatiba · SP"), e os botões de agendar tatuagem e barbearia.
 
-**Um CTA por vez.** Cada seção tem uma ação clara ("Agendar horário →", "Agendar com o Matheus →", "Quero agendar →"). No celular, uma barra fixa de agendamento aparece depois do topo, porque a maior parte do tráfego vem do Instagram.
+**Um CTA por vez, no contexto certo.** A tatuagem agenda pelo WhatsApp e a barbearia pela agenda online. O botão do menu e a barra fixa do celular mudam sozinhos conforme a parte do site que a pessoa está vendo (`src/hooks/useBooking.ts`); só o topo, que apresenta a marca inteira, mostra os dois.
 
 **Animação com controle.** Transições lentas e discretas: fotos que se alternam devagar, revelação suave das imagens, o nome desenhado uma vez. Sem parallax, sem zoom em cards, sem elementos girando. Quem ativa "reduzir movimento" no sistema vê tudo parado.
 
@@ -120,5 +120,5 @@ Para usar um domínio próprio (ex.: `merakitattoo.com.br`): no projeto da Verce
 ## Contato do estúdio
 
 - Endereço: R. Rangel Pestana, 39, Centro, Itatiba/SP
-- WhatsApp: (11) 94391-6772
-- Instagram: [@meraki.tattoobr](https://instagram.com/meraki.tattoobr) · Barbearia: [@barbeariameraki_](https://www.instagram.com/barbeariameraki_/)
+- Tatuagem: WhatsApp (11) 95664-7982 · [@meraki.tattoobr](https://instagram.com/meraki.tattoobr)
+- Barbearia: [agenda online](https://agendeonline.salonsoft.com.br/barbeariameraki) · [@barbeariameraki_](https://www.instagram.com/barbeariameraki_/)
