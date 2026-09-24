@@ -5,12 +5,12 @@ import { Wordmark } from './Wordmark'
 
 const leftLinks = [
   { href: '#estudio', label: 'O estúdio' },
-  { href: '#estilos', label: 'Estilos' },
-  { href: '#tatuagens', label: 'Tatuagens' },
+  { href: '#tatuador', label: 'Tatuador' },
+  { href: '#tatuagens', label: 'Trabalhos' },
 ]
 
 const rightLinks = [
-  { href: '#tatuador', label: 'Tatuador' },
+  { href: '#como-funciona', label: 'Como funciona' },
   { href: '#avaliacoes', label: 'Avaliações' },
   { href: '#barbearia', label: 'Barbearia' },
 ]

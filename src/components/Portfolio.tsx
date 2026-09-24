@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { portfolio, studio } from '../data/studio'
+import { portfolio, portfolioHighlights, studio } from '../data/studio'
 import { Lightbox } from './Lightbox'
 import { Reel } from './Reel'
 import { SectionHeading } from './SectionHeading'
@@ -10,16 +10,35 @@ const ROWS = [
   { speed: 80, reverse: false },
 ]
 
+const highlights = portfolioHighlights
+  .map((id) => portfolio.find((p) => p.id === id))
+  .filter((p): p is (typeof portfolio)[number] => Boolean(p))
+
 export function Portfolio() {
-  const [open, setOpen] = useState<number | null>(null)
+  // A tela cheia percorre primeiro os destaques e depois o portfólio completo
+  const [open, setOpen] = useState<{ list: typeof portfolio; index: number } | null>(null)
 
   return (
     <section id="tatuagens" className="section section--reels">
       <div className="container">
-        <SectionHeading
-          title="Trabalhos"
-          intro="Toque em uma foto para ampliar."
-        />
+        <SectionHeading title="Trabalhos" />
+
+        {/* Galeria editorial: a fotografia fala, sem legenda. O clique mostra a descrição. */}
+        <div className="editorial">
+          {highlights.map((item, i) => (
+            <button
+              key={item.id}
+              className="editorial__item"
+              onClick={() => setOpen({ list: highlights, index: i })}
+              aria-label={`Ampliar: ${item.title}`}
+              data-reveal="wipe"
+            >
+              <img src={item.image} alt={item.title} loading="lazy" />
+            </button>
+          ))}
+        </div>
+
+        <p className="reels__label">Mais trabalhos</p>
       </div>
 
       <div className="reels">
@@ -30,7 +49,7 @@ export function Portfolio() {
             speed={row.speed}
             reverse={row.reverse}
             offset={Math.round((portfolio.length / ROWS.length) * r)}
-            onOpen={setOpen}
+            onOpen={(index) => setOpen({ list: portfolio, index })}
           />
         ))}
       </div>
@@ -42,8 +61,13 @@ export function Portfolio() {
         </a>
       </p>
 
-      {open !== null && (
-        <Lightbox items={portfolio} index={open} onChange={setOpen} onClose={() => setOpen(null)} />
+      {open && (
+        <Lightbox
+          items={open.list}
+          index={open.index}
+          onChange={(index) => setOpen({ ...open, index })}
+          onClose={() => setOpen(null)}
+        />
       )}
     </section>
   )

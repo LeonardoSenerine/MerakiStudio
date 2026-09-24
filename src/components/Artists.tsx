@@ -13,6 +13,7 @@ export function Artists() {
           <p className="artist-feature__role">{artist.role}</p>
           <h2>{artist.name}</h2>
           <p className="profile-statement">{artist.statement}</p>
+          <p className="muted">{artist.text}</p>
           <p className="muted">{artist.focus}</p>
 
           <div className="artist-feature__actions">
@@ -24,9 +25,7 @@ export function Artists() {
             >
               Agendar com o Matheus →
             </a>
-            <a href={`https://instagram.com/${artist.instagram}`} target="_blank" rel="noreferrer" className="text-link">
-              @{artist.instagram}
-            </a>
+            <a href="#tatuagens" className="text-link">Ver trabalhos</a>
           </div>
         </div>
       </div>

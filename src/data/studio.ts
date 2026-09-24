@@ -16,9 +16,10 @@ export const studio = {
   award: '3x eleito o melhor estúdio de Itatiba',
   // Texto da seção "O estúdio": a primeira frase aparece em destaque.
   about: [
-    'Um estúdio para quem valoriza o tempo e o processo.',
-    'Na Meraki, cada atendimento acontece com hora marcada. Antes de chegar, tudo já foi definido: a ideia, o tamanho, o local e os detalhes do trabalho.',
-    'Sofá, café, plantas e aquário. Sem pressa.',
+    'Um espaço feito para a sessão.',
+    'A Meraki é um estúdio privado no centro de Itatiba, feito para que cada sessão aconteça com tempo, atenção e tranquilidade.',
+    'Antes de chegar ao estúdio, tudo já foi conversado: a ideia, o desenho, o tamanho, o local e cada detalhe do projeto.',
+    'Aqui, o processo começa antes da agulha tocar a pele.',
   ],
   // Topo: três colunas de fotos; cada coluna alterna entre as suas.
   heroPanels: [
@@ -45,10 +46,34 @@ export const meaning = {
     'Colocar o coração e a energia vital no que se faz, seja uma tarefa simples ou complexa, na arte, no trabalho ou na vida de todo dia.',
 }
 
+// Como funciona para tatuar: do primeiro contato à pele
 export const process = {
-  title: 'Da ideia ao traço.',
-  steps: ['Você traz a ideia.', 'O desenho nasce a partir dela.', 'A sessão acontece quando tudo fizer sentido.'],
+  title: 'Do primeiro contato à pele.',
+  steps: [
+    { name: 'Conversa', text: 'Você apresenta sua ideia pelo WhatsApp.' },
+    { name: 'Projeto', text: 'O desenho é desenvolvido a partir da ideia e das referências.' },
+    { name: 'Sessão', text: 'Tudo preparado para que a tatuagem aconteça com calma.' },
+    { name: 'Depois', text: 'Você sai com todas as orientações de cuidado.' },
+  ],
   note: 'Na primeira mensagem, mande a ideia, o local do corpo, o tamanho aproximado e referências, se tiver.',
+}
+
+// O que existe dentro da Meraki, cada um levando à sua parte do site
+export const inside = [
+  { name: 'Tatuagem', text: 'Projetos autorais e sessões com hora marcada.', href: '#estudio' },
+  { name: 'Barbearia', text: 'Corte, barba e acabamento.', href: '#barbearia' },
+  { name: 'Locs & Tranças', text: 'Locs, twists e tranças com o Bruno Vieira.', href: '#barbearia-trabalhos' },
+]
+
+// Chamada final e informações objetivas de confiança (só o que é confirmado)
+export const closing = {
+  title: 'Sua ideia começa aqui.',
+  text: 'Conte para a Meraki o que você tem em mente.',
+  facts: [
+    { label: 'Onde', text: 'Centro de Itatiba · SP' },
+    { label: 'Agendamento', text: 'Pelo WhatsApp' },
+    { label: 'Atendimento', text: 'Com horário marcado' },
+  ],
 }
 
 /** Link do WhatsApp da Meraki com a mensagem já escrita. */
@@ -75,9 +100,10 @@ export const styles: Style[] = [
 
 export const artist = {
   name: 'Matheus Andrade',
-  role: 'Tatuagem',
-  statement: 'Realismo em preto e cinza.',
-  focus: 'Retratos, arte sacra, mitologia e fechamentos.',
+  role: 'O trabalho de Matheus',
+  statement: 'Cada projeto começa com uma conversa.',
+  text: 'Matheus desenvolve cada tatuagem a partir da ideia do cliente, transformando referências e conceitos em um desenho que faça sentido para aquela pessoa.',
+  focus: 'Realismo em preto e cinza: retratos, arte sacra e mitologia.',
   image: img('matheus-andrade'),
   instagram: 'matheusandrade_1999',
 }
@@ -88,6 +114,8 @@ export type PortfolioItem = {
   style: string
   image: string
 }
+
+export const portfolioHighlights = [1, 2, 4, 5, 6, 3]
 
 export const portfolio: PortfolioItem[] = [
   { id: 1, title: 'Palhaços e Coringa', style: 'Realismo · Tronco', image: img('torso-palhacos-coringa') },

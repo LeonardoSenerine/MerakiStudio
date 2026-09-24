@@ -8,6 +8,8 @@ import { Highlight } from './components/Highlight'
 import { Artists } from './components/Artists'
 import { Barbershop } from './components/Barbershop'
 import { Booking } from './components/Booking'
+import { Closing } from './components/Closing'
+import { Inside } from './components/Inside'
 import { Reviews } from './components/Reviews'
 import { Footer } from './components/Footer'
 import { MobileCta } from './components/MobileCta'
@@ -22,13 +24,15 @@ export default function App() {
       <main>
         <Hero />
         <Meaning />
+        <Inside />
         <About />
         <Artists />
         <Portfolio />
         <Styles />
+        <Booking />
         <Highlight />
         <Reviews />
-        <Booking />
+        <Closing />
         <Barbershop />
       </main>
       <Footer />
