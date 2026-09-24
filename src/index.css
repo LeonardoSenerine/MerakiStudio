@@ -402,7 +402,7 @@ p {
   position: sticky;
   top: 110px;
   width: 100%;
-  max-width: 420px;
+  max-width: 540px;
   margin: 0;
   justify-self: center;
   overflow: hidden;
@@ -1003,7 +1003,7 @@ p {
 .barber-profile__portrait {
   justify-self: end;
   width: 100%;
-  max-width: 340px;
+  max-width: 400px;
   aspect-ratio: 4 / 5;
   overflow: hidden;
   outline: 1px solid rgba(200, 169, 106, 0.45);
@@ -1753,5 +1753,135 @@ p {
   .booking__cta {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+/* ---------- Topo: escolha de agendamento ---------- */
+.hero__statement {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+.hero__offer {
+  max-width: 46ch;
+  margin-inline: auto;
+  line-height: 1.6;
+}
+
+.chooser {
+  position: relative;
+}
+
+.chooser__menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  z-index: 5;
+  display: grid;
+  min-width: 260px;
+  /* "translate" separado para não brigar com o transform da animação de entrada */
+  translate: -50% 0;
+  background: var(--bg);
+  border: 1px solid var(--gold);
+  text-align: left;
+  animation: fade-up 0.25s ease;
+}
+
+.chooser__menu a {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  font: 400 1.1rem var(--font-display);
+  transition: background 0.2s, color 0.2s;
+}
+
+.chooser__menu a + a {
+  border-top: 1px solid var(--line);
+}
+
+.chooser__menu span {
+  font: 500 0.7rem var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+}
+
+.chooser__menu a:hover {
+  background: var(--surface);
+  color: var(--gold-light);
+}
+
+/* ---------- Prova: prêmio junto das avaliações ---------- */
+.reviews__award {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0 0 5rem;
+  font: 600 clamp(2rem, 5vw, 3.6rem)/1.1 var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.reviews__award small {
+  font: 600 clamp(0.72rem, 1.4vw, 0.85rem) var(--font-brand);
+  letter-spacing: 0.3em;
+  color: var(--gold-light);
+}
+
+/* ---------- Mais espaço negativo no computador ---------- */
+@media (min-width: 961px) {
+  .section {
+    padding: 140px 0;
+  }
+
+  .about-section {
+    padding: 160px 0;
+  }
+
+  .artist-section,
+  .barber-profile {
+    padding: 170px 0;
+  }
+
+  .inside {
+    padding: 130px 0;
+  }
+
+  .meaning {
+    padding: 170px 0 160px;
+  }
+
+  .reviews {
+    padding: 150px 0;
+  }
+
+  .booking {
+    padding: 160px 0;
+  }
+
+  .closing {
+    padding: 190px 0 150px;
+  }
+
+  .heading {
+    margin-bottom: 4rem;
+  }
+
+  .about {
+    gap: 7rem;
+  }
+
+  .artist-feature {
+    gap: 7rem;
+  }
+}
+
+@media (max-width: 640px) {
+  /* No celular a escolha abre logo abaixo do botão, dentro da página, sem sair da tela */
+  .chooser__menu {
+    position: static;
+    min-width: 0;
+    margin-top: 8px;
+    translate: none;
   }
 }

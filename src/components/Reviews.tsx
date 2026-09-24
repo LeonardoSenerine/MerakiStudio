@@ -4,6 +4,13 @@ export function Reviews() {
   return (
     <section id="avaliacoes" className="section reviews">
       <div className="container">
+        <p className="reviews__award">
+          <span>
+            <span className="accent">3x</span> eleito o melhor estúdio de Itatiba
+          </span>
+          <small>Especialista em tatuagem preto e branco</small>
+        </p>
+
         <div className="reviews__head">
           <h2>Avaliações</h2>
           <p className="reviews__score">

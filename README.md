@@ -10,14 +10,13 @@ Feito com **React 19 + TypeScript + Vite**. É um site estático de uma página:
 |---|---|
 | Topo: nome, localização, proposta e agendamentos | `src/components/Hero.tsx` |
 | Significado de *meraki* | `src/components/Meaning.tsx` |
-| Dentro da Meraki (tatuagem, barbearia, locs & tranças) | `src/components/Inside.tsx` |
 | O estúdio | `src/components/About.tsx` |
+| Dentro da Meraki (tatuagem, barbearia, locs & tranças) | `src/components/Inside.tsx` |
 | O trabalho de Matheus | `src/components/Artists.tsx` |
 | Trabalhos: galeria editorial + carrosséis + tela cheia | `src/components/Portfolio.tsx` |
 | Tatuagem com intenção (estilos) | `src/components/Styles.tsx` |
 | Do primeiro contato à pele (como funciona) | `src/components/Booking.tsx` |
-| Faixa "3x eleito" | `src/components/Highlight.tsx` |
-| Avaliações do Google | `src/components/Reviews.tsx` |
+| "3x eleito" + avaliações do Google | `src/components/Reviews.tsx` |
 | Sua ideia começa aqui (chamada final e informações) | `src/components/Closing.tsx` |
 | Barbearia: abertura, salão, Bruno Vieira e trabalhos | `src/components/Barbershop.tsx` |
 | Rodapé com mapa | `src/components/Footer.tsx` |
@@ -27,7 +26,7 @@ Feito com **React 19 + TypeScript + Vite**. É um site estático de uma página:
 
 **Voz da marca.** Poucas palavras, frases fortes, muito espaço. Nada de "experiência diferenciada" ou "soluções completas": o texto fala do que existe de verdade (hora marcada, preto e cinza, locs e tranças) e deixa as fotos venderem. O script `scripts/auditoria_ia.py` procura clichês e padrões de site genérico para manter essa voz.
 
-**Ordem da página.** Marca → o que existe dentro da Meraki → atmosfera → profissional → trabalho → serviços → como funciona → prova → agendamento. Primeiro o visitante entende onde está e com quem vai falar; o serviço vem depois, para a Meraki não virar um cardápio.
+**Ordem da página.** Marca → manifesto → atmosfera → o que existe dentro da Meraki → profissional → trabalho → serviços → como funciona → prova → agendamento. Primeiro o visitante entende onde está e com quem vai falar; o serviço vem depois, para a Meraki não virar um cardápio.
 
 **Primeiros 3 segundos.** Sem rolar, o celular mostra: o nome ("Meraki Galleria Shop"), o que é ("Tatuagem, locs, tranças, corte e barba"), onde fica ("Centro de Itatiba · SP"), e os botões de agendar tatuagem e barbearia.
 

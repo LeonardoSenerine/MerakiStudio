@@ -10,18 +10,15 @@ export const studio = {
   subtitle: 'Galleria Shop',
   // Voz da marca: poucas palavras, frases fortes
   location: 'Centro de Itatiba · SP',
-  statement: ['Seu visual não é detalhe.', 'É presença.'],
-  offer: 'Tatuagem, locs, tranças, corte e barba.',
+  statement: 'Arte, cuidado e identidade.',
+  offer: 'Um espaço privado em Itatiba para tatuagem, cabelo e barba, para quem valoriza o processo tanto quanto o resultado.',
   tagline: 'Estúdio de tatuagem privado no centro de Itatiba, especializado em preto e branco.',
   award: '3x eleito o melhor estúdio de Itatiba',
   // Texto da seção "O estúdio": a primeira frase aparece em destaque.
   about: [
-    'Um espaço feito para a sessão.',
-    'A Meraki é um estúdio privado no centro de Itatiba, feito para que cada sessão aconteça com tempo, atenção e tranquilidade.',
-    'Antes de chegar ao estúdio, tudo já foi conversado: a ideia, o desenho, o tamanho, o local e cada detalhe do projeto. Aqui, o processo começa antes da agulha tocar a pele.',
-    'Na recepção, o letreiro dourado da Meraki divide a parede com dezenas de desenhos. Tem sofá, café e alguma coisa para comer enquanto você espera.',
-    'No salão, as estações ficam em frente a uma parede pintada à mão, entre plantas e o aquário. Limpeza e organização vêm antes de qualquer traço.',
-    'Quando a sessão termina, o cuidado continua: o Matheus explica como cuidar da cicatrização e acompanha nos dias seguintes.',
+    'Um estúdio privado, onde cada sessão tem seu próprio tempo.',
+    'Antes de chegar, tudo já foi conversado: a ideia, o desenho, o tamanho e o local. O processo começa antes da agulha tocar a pele.',
+    'Na recepção, sofá, café e uma parede cheia de desenhos. No salão, plantas, aquário e limpeza antes de qualquer traço.',
   ],
   // Topo: três colunas de fotos; cada coluna alterna entre as suas.
   heroPanels: [
@@ -172,10 +169,8 @@ export const barbershop = {
   // Seção "Salão da barbearia", no mesmo formato do salão de tatuagem
   space: [
     'Letreiro dourado na parede. Ferramentas na bancada. Horário marcado.',
-    'É aqui que o Bruno Vieira atende.',
-    'A barbearia tem espaço próprio dentro da Meraki: espelho, bancada, plantas penduradas e o letreiro da Barbearia Meraki, com a tesoura e a navalha em dourado.',
+    'É aqui que o Bruno Vieira atende, em espaço próprio dentro da Meraki.',
     'Locs e tranças pedem tempo e técnica. Corte e barba pedem precisão no acabamento. O Bruno faz os dois.',
-    'Cada atendimento é marcado pela agenda online, então cada cliente chega sabendo o seu horário.',
   ],
   place: { src: img('barbearia-bancada'), alt: 'Bancada da barbearia com máquinas e navalhas' },
 }

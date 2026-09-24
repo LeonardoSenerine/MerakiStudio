@@ -4,7 +4,6 @@ import { Meaning } from './components/Meaning'
 import { About } from './components/About'
 import { Styles } from './components/Styles'
 import { Portfolio } from './components/Portfolio'
-import { Highlight } from './components/Highlight'
 import { Artists } from './components/Artists'
 import { Barbershop } from './components/Barbershop'
 import { Booking } from './components/Booking'
@@ -24,13 +23,12 @@ export default function App() {
       <main>
         <Hero />
         <Meaning />
-        <Inside />
         <About />
+        <Inside />
         <Artists />
         <Portfolio />
         <Styles />
         <Booking />
-        <Highlight />
         <Reviews />
         <Closing />
         <Barbershop />
