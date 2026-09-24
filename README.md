@@ -70,6 +70,16 @@ Para processar só algumas fotos, passe os nomes: `python scripts/melhorar_image
 
 Os scripts precisam de Python 3 com o Pillow (`pip install pillow`).
 
+### Imagem de compartilhamento
+
+`public/og-image.jpg` (1200×630) é a prévia que aparece quando o link do site é enviado no WhatsApp, Instagram ou Facebook. Para gerar de novo (por exemplo, depois de trocar a foto de fundo):
+
+```bash
+python scripts/gerar_imagem_compartilhamento.py
+```
+
+O endereço completo da imagem é preenchido no build: na Vercel ele usa o endereço de produção do projeto. Com domínio próprio, crie na Vercel a variável de ambiente `SITE_URL` (ex.: `https://merakitattoo.com.br`) e publique de novo.
+
 Também há um verificador de "vícios de site gerado por IA" (clichês, travessões, emojis, efeitos batidos):
 
 ```bash
