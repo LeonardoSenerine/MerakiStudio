@@ -18,7 +18,7 @@ export function Portfolio() {
       <div className="container">
         <SectionHeading
           title="Trabalhos"
-          intro="Passe o mouse para pausar e clique em uma tatuagem para ver em tela cheia."
+          intro="Toque em uma foto para ampliar."
         />
       </div>
 

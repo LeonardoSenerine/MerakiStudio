@@ -5,10 +5,7 @@ export function Styles() {
   return (
     <section id="estilos" className="section section--alt styles-section">
       <div className="container">
-        <SectionHeading
-          title="Estilos"
-          intro="O foco do estúdio é preto e cinza. Estes são os estilos que o Matheus mais tatua."
-        />
+        <SectionHeading title="Tatuagem com intenção" intro="Preto e cinza. Os estilos que o Matheus mais tatua." />
         <div className="styles">
           {styles.map((s) => (
             <article key={s.title} className="style-card" style={{ backgroundImage: `url(${s.image})` }}>

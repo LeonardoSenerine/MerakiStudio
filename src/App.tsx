@@ -10,6 +10,7 @@ import { Barbershop } from './components/Barbershop'
 import { Booking } from './components/Booking'
 import { Reviews } from './components/Reviews'
 import { Footer } from './components/Footer'
+import { MobileCta } from './components/MobileCta'
 import { useScrollAnimations } from './hooks/useScrollAnimations'
 
 export default function App() {
@@ -22,15 +23,16 @@ export default function App() {
         <Hero />
         <Meaning />
         <About />
-        <Styles />
-        <Portfolio />
-        <Highlight />
         <Artists />
+        <Portfolio />
+        <Styles />
+        <Highlight />
         <Reviews />
         <Booking />
         <Barbershop />
       </main>
       <Footer />
+      <MobileCta />
     </>
   )
 }

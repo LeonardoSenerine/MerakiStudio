@@ -8,17 +8,34 @@ Feito com **React 19 + TypeScript + Vite**. É um site estático de uma página:
 
 | Seção | Arquivo |
 |---|---|
-| Topo com fotos que se alternam | `src/components/Hero.tsx` |
+| Topo: nome, localização, proposta e agendamento | `src/components/Hero.tsx` |
 | Significado de *meraki* | `src/components/Meaning.tsx` |
-| O estúdio | `src/components/About.tsx` |
-| Estilos | `src/components/Styles.tsx` |
-| Trabalhos (carrosséis + tela cheia) | `src/components/Portfolio.tsx` |
-| Faixa "3x eleito" | `src/components/Highlight.tsx` |
+| O estúdio (atmosfera) | `src/components/About.tsx` |
 | O tatuador (Matheus Andrade) | `src/components/Artists.tsx` |
+| Trabalhos (carrosséis + tela cheia) | `src/components/Portfolio.tsx` |
+| Tatuagem com intenção (estilos) | `src/components/Styles.tsx` |
+| Faixa "3x eleito" | `src/components/Highlight.tsx` |
 | Avaliações do Google | `src/components/Reviews.tsx` |
-| Agendamento pelo WhatsApp | `src/components/Booking.tsx` |
-| Barbearia (Bruno Vieira) | `src/components/Barbershop.tsx` |
+| Da ideia ao traço (processo e agendamento) | `src/components/Booking.tsx` |
+| Barbearia: abertura, salão, Bruno Vieira e trabalhos | `src/components/Barbershop.tsx` |
 | Rodapé com mapa | `src/components/Footer.tsx` |
+| Barra de agendamento fixa no celular | `src/components/MobileCta.tsx` |
+
+## Decisões do projeto
+
+**Voz da marca.** Poucas palavras, frases fortes, muito espaço. Nada de "experiência diferenciada" ou "soluções completas": o texto fala do que existe de verdade (hora marcada, preto e cinza, locs e tranças) e deixa as fotos venderem. O script `scripts/auditoria_ia.py` procura clichês e padrões de site genérico para manter essa voz.
+
+**Ordem da página.** Marca → atmosfera → profissional → trabalho → serviços → prova → agendamento. Primeiro o visitante entende onde está e com quem vai falar; o serviço vem depois, para a Meraki não virar um cardápio.
+
+**Primeiros 3 segundos.** Sem rolar, o celular mostra: o nome, o que é ("Tatuagem & Barbearia"), onde fica ("Centro de Itatiba · SP"), o que oferece e o botão de agendar.
+
+**Um CTA por vez.** Cada seção tem uma ação clara ("Agendar horário →", "Agendar com o Matheus →", "Quero agendar →"). No celular, uma barra fixa de agendamento aparece depois do topo, porque a maior parte do tráfego vem do Instagram.
+
+**Animação com controle.** Transições lentas e discretas: fotos que se alternam devagar, revelação suave das imagens, o nome desenhado uma vez. Sem parallax, sem zoom em cards, sem elementos girando. Quem ativa "reduzir movimento" no sistema vê tudo parado.
+
+**Fotografia real.** Só fotos do estúdio, da barbearia e de trabalhos reais. As que vieram pequenas passaram por super-resolução com IA, misturada com a versão original para não criar pele de plástico, e nenhuma aparece maior do que aguenta.
+
+**Técnico.** React 19 + TypeScript + Vite, componentes pequenos e todo o conteúdo em um arquivo de dados. SEO com dados estruturados (estúdio de tatuagem e barbearia), sitemap, robots e imagem de compartilhamento gerados no build com o endereço correto.
 
 ## Rodar no computador
 

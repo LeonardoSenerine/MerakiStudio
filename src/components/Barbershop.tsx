@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { barber, barbershop, studio, type BarberWork } from '../data/studio'
+import { barber, barbershop, whatsappLink, type BarberWork } from '../data/studio'
 import { Lightbox } from './Lightbox'
 import { RotatingPanels } from './RotatingPanels'
 import { SpaceSection } from './SpaceSection'
@@ -12,7 +12,7 @@ export function Barbershop() {
   const [filter, setFilter] = useState<(typeof FILTERS)[number]>('Todos')
   const [open, setOpen] = useState<number | null>(null)
   const works: BarberWork[] = filter === 'Todos' ? barbershop.works : barbershop.works.filter((w) => w.category === filter)
-  const whatsapp = `https://wa.me/${studio.whatsapp}?text=${encodeURIComponent('Olá, Bruno! Quero agendar um horário na barbearia.')}`
+  const whatsapp = whatsappLink('Olá, Bruno! Quero agendar um horário na barbearia.')
 
   return (
     <div className="barbershop">
@@ -26,16 +26,16 @@ export function Barbershop() {
         </div>
       </section>
 
-      <SpaceSection id="barbearia-salao" title="Salão da barbearia" paragraphs={barbershop.space} photo={barbershop.place} />
+      <SpaceSection id="barbearia-salao" title="O salão" paragraphs={barbershop.space} photo={barbershop.place} />
 
       <section className="section barber-profile">
         <div className="container barber-profile__inner">
           <div>
             <p className="artist-feature__role">{barber.role}</p>
             <h2>{barber.name}</h2>
-            <blockquote className="barber-profile__quote">{barber.quote}</blockquote>
-            <p className="muted">{barber.bio}</p>
-            <a href={whatsapp} target="_blank" rel="noreferrer" className="btn btn--accent">Agendar com o Bruno</a>
+            <p className="profile-statement">{barber.statement}</p>
+            <blockquote className="barber-profile__quote">“{barber.quote}”</blockquote>
+            <a href={whatsapp} target="_blank" rel="noreferrer" className="btn btn--accent">Agendar com o Bruno →</a>
           </div>
           <div className="barber-profile__portrait" data-reveal="wipe">
             <img src={barber.image} alt={`${barber.name} sentado na porta de um carro`} />
@@ -88,10 +88,6 @@ export function Barbershop() {
             </a>
           </p>
 
-          <p className="barber-works__cta">
-            Agendamento pelo WhatsApp da Meraki, {studio.phone}.{' '}
-            <a href={whatsapp} target="_blank" rel="noreferrer" className="text-link">Chamar o Bruno →</a>
-          </p>
         </div>
 
         {open !== null && (

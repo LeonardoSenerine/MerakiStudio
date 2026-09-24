@@ -32,7 +32,6 @@ export function useScrollAnimations() {
     })
     mutations.observe(document.body, { childList: true, subtree: true })
 
-    // Marca o header como rolado e expõe a posição para o parallax do topo (--scroll-y).
     // Também revela pelo scroll, caso o IntersectionObserver não dispare (acontece em
     // algumas abas em segundo plano); assim nenhuma foto fica presa escondida.
     const revealInView = () => {
@@ -45,7 +44,7 @@ export function useScrollAnimations() {
     const onScroll = () => {
       revealInView()
       document.body.classList.toggle('is-scrolled', window.scrollY > 40)
-      document.documentElement.style.setProperty('--scroll-y', String(Math.min(window.scrollY, 1200)))
+      document.body.classList.toggle('past-hero', window.scrollY > window.innerHeight * 0.8)
     }
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })

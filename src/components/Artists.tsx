@@ -1,4 +1,4 @@
-import { artist } from '../data/studio'
+import { artist, whatsappLink } from '../data/studio'
 import { Photo } from './Photo'
 
 export function Artists() {
@@ -12,17 +12,20 @@ export function Artists() {
         <div>
           <p className="artist-feature__role">{artist.role}</p>
           <h2>{artist.name}</h2>
-          <p className="muted">{artist.bio}</p>
+          <p className="profile-statement">{artist.statement}</p>
+          <p className="muted">{artist.focus}</p>
 
           <div className="artist-feature__actions">
-            <a href="#agendar" className="btn btn--accent">Agendar com o Matheus</a>
             <a
-              href={`https://instagram.com/${artist.instagram}`}
+              href={whatsappLink('Olá, Matheus! Quero fazer um orçamento de tatuagem.')}
               target="_blank"
               rel="noreferrer"
-              className="text-link"
+              className="btn btn--accent"
             >
-              @{artist.instagram} no Instagram
+              Agendar com o Matheus →
+            </a>
+            <a href={`https://instagram.com/${artist.instagram}`} target="_blank" rel="noreferrer" className="text-link">
+              @{artist.instagram}
             </a>
           </div>
         </div>

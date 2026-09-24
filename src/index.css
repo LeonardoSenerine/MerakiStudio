@@ -250,7 +250,6 @@ p {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 4px;
-  transform: translateY(calc(var(--scroll-y, 0) * 0.25px));
 }
 
 .hero__cell {
@@ -630,7 +629,7 @@ p {
 .highlight {
   position: relative;
   padding: 140px 0;
-  background: var(--surface) center / cover fixed;
+  background: var(--surface) center / cover;
 }
 
 .highlight__overlay {
@@ -1372,5 +1371,143 @@ p {
 
   .reviews__featured {
     padding-left: 1.25rem;
+  }
+}
+
+/* ---------- Voz da marca ---------- */
+.hero__kicker {
+  letter-spacing: 0.3em;
+}
+
+.hero__statement {
+  margin: 0 0 1rem;
+  font: italic 400 clamp(1.5rem, 3.2vw, 2.2rem)/1.3 var(--font-display);
+  color: var(--text);
+}
+
+.hero__offer {
+  margin: 0 0 2.25rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: #cfcac2;
+}
+
+.hero__actions {
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero__actions .text-link {
+  color: #cfcac2;
+}
+
+/* Frase de posicionamento dos profissionais */
+.profile-statement {
+  max-width: 24ch;
+  margin: 1.25rem 0 1rem;
+  font: italic 400 clamp(1.4rem, 2.4vw, 1.8rem)/1.35 var(--font-display);
+  color: var(--gold-light);
+}
+
+.barber-profile__quote {
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+/* Da ideia ao traço */
+.booking__inner {
+  display: block;
+  max-width: 900px;
+}
+
+.booking h2 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.process {
+  display: grid;
+  gap: 0;
+  margin: 3rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.process li {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 1.4rem 0;
+  border-top: 1px solid var(--line);
+  font: italic 400 clamp(1.3rem, 2.6vw, 1.9rem)/1.3 var(--font-display);
+}
+
+.process li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.process span {
+  font: 600 0.8rem var(--font-brand);
+  font-style: normal;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+}
+
+.booking__cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem 2rem;
+}
+
+.booking__cta p {
+  max-width: 44ch;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Trabalhos do Bruno em fotos maiores */
+.works-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Barra de agendamento fixa, só no celular */
+.mobile-cta {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .hero__actions {
+    gap: 1rem;
+  }
+
+  .mobile-cta {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    z-index: 30;
+    display: block;
+    padding: 1rem;
+    background: var(--gold);
+    color: #111;
+    text-align: center;
+    font: 500 0.8rem var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    transform: translateY(150%);
+    transition: transform 0.4s ease;
+  }
+
+  body.past-hero .mobile-cta {
+    transform: none;
+  }
+
+  /* Espaço para a barra não cobrir o fim do rodapé */
+  .footer {
+    padding-bottom: 72px;
+  }
+
+  .works-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }

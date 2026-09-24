@@ -6,15 +6,17 @@ const img = (file: string) => `/images/${file}.webp`
 export const studio = {
   name: 'Meraki',
   subtitle: 'Tattoo',
+  // Voz da marca: poucas palavras, frases fortes
+  location: 'Centro de Itatiba · SP',
+  statement: ['Seu visual não é detalhe.', 'É presença.'],
+  offer: 'Tatuagem, locs, tranças, corte e barba.',
   tagline: 'Estúdio de tatuagem privado no centro de Itatiba, especializado em preto e branco.',
   award: '3x eleito o melhor estúdio de Itatiba',
   // Texto da seção "O estúdio": a primeira frase aparece em destaque.
   about: [
-    'A Meraki é um estúdio de tatuagem privado no centro de Itatiba.',
-    'Cada sessão é combinada antes pelo WhatsApp: a ideia, a composição, o tamanho, o local do corpo e o valor. O desenho é feito a partir dessa conversa.',
-    'O atendimento é só com horário marcado. No fim da sessão, o próprio Matheus explica os cuidados para a tatuagem cicatrizar bem.',
-    'Na recepção tem sofá e café, e o espaço tem plantas, aquário e uma parede cheia de desenhos.',
-    'No mesmo endereço funciona a barbearia do Bruno Vieira.',
+    'Um estúdio para quem valoriza o tempo e o processo.',
+    'Na Meraki, cada atendimento acontece com hora marcada. Antes de chegar, tudo já foi definido: a ideia, o tamanho, o local e os detalhes do trabalho.',
+    'Sofá, café, plantas e aquário. Sem pressa.',
   ],
   // Topo: três colunas de fotos; cada coluna alterna entre as suas.
   heroPanels: [
@@ -40,6 +42,16 @@ export const meaning = {
     'Colocar o coração e a energia vital no que se faz, seja uma tarefa simples ou complexa, na arte, no trabalho ou na vida de todo dia.',
 }
 
+export const process = {
+  title: 'Da ideia ao traço.',
+  steps: ['Você traz a ideia.', 'O desenho nasce a partir dela.', 'A sessão acontece quando tudo fizer sentido.'],
+  note: 'Na primeira mensagem, mande a ideia, o local do corpo, o tamanho aproximado e referências, se tiver.',
+}
+
+/** Link do WhatsApp da Meraki com a mensagem já escrita. */
+export const whatsappLink = (message: string) =>
+  `https://wa.me/${studio.whatsapp}?text=${encodeURIComponent(message)}`
+
 export const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
   'Meraki Tattoo Studio, R. Rangel Pestana, 39, Itatiba',
 )}`
@@ -52,18 +64,19 @@ export type Style = {
 
 // Estilos que aparecem com frequência no portfólio do Matheus.
 export const styles: Style[] = [
-  { title: 'Realismo', description: 'Retratos e figuras em preto e cinza, como o Zeus e o leão.', image: img('zeus-antebraco') },
-  { title: 'Arte sacra', description: 'Jesus, Virgem Maria, anjos e cruzes.', image: img('virgem-maria-braco') },
-  { title: 'Oriental', description: 'Máscaras hannya com crisântemos e ondas.', image: img('hannya-crisantemo') },
-  { title: 'Lettering', description: 'Frases e nomes desenhados à mão, do fino ao gótico.', image: img('lettering-perna') },
+  { title: 'Realismo', description: 'Retratos e figuras em preto e cinza.', image: img('zeus-antebraco') },
+  { title: 'Arte sacra', description: 'Jesus, Virgem Maria, anjos.', image: img('virgem-maria-braco') },
+  { title: 'Oriental', description: 'Hannya, crisântemos, ondas.', image: img('hannya-crisantemo') },
+  { title: 'Lettering', description: 'Letras desenhadas à mão.', image: img('lettering-perna') },
 ]
 
 export const artist = {
   name: 'Matheus Andrade',
-  role: 'Artista da Meraki',
+  role: 'Tatuagem',
+  statement: 'Realismo em preto e cinza.',
+  focus: 'Retratos, arte sacra, mitologia e fechamentos.',
   image: img('matheus-andrade'),
   instagram: 'matheusandrade_1999',
-  bio: 'Matheus trabalha principalmente com realismo em preto e cinza: retratos, arte sacra, mitologia e fechamentos de braço, perna e tronco. O desenho é feito para cada cliente, a partir da ideia que chega no orçamento.',
 }
 
 export type PortfolioItem = {
@@ -97,7 +110,7 @@ export type BarberWork = PortfolioItem & { category: 'Locs e tranças' | 'Corte 
 export const barbershop = {
   name: 'Meraki Barbearia',
   instagram: 'barbeariameraki_',
-  tagline: 'Locs, tranças, corte e barba no mesmo endereço do estúdio, no centro de Itatiba.',
+  tagline: 'A barbearia da Meraki, no mesmo endereço.',
   specialties: 'Locs · Tranças · Corte · Barba',
   // Fundo da abertura da barbearia: três colunas que se alternam (no celular, uma só)
   heroColumns: [
@@ -122,19 +135,18 @@ export const barbershop = {
   ] satisfies BarberWork[] as BarberWork[],
   // Seção "Salão da barbearia", no mesmo formato do salão de tatuagem
   space: [
-    'É na Meraki que Bruno Vieira recebe seus clientes para serviços de locs, tranças, corte e barba.',
-    'O ambiente traduz a identidade da barbearia em cada detalhe: o letreiro dourado da Meraki na parede, a bancada com as ferramentas de trabalho e um espaço pensado para que cada atendimento aconteça com calma e atenção.',
-    'Os horários são agendados previamente pelo WhatsApp da Meraki.',
+    'Letreiro dourado na parede. Ferramentas na bancada. Horário marcado.',
+    'É aqui que o Bruno Vieira atende.',
   ],
   place: { src: img('barbearia-bancada'), alt: 'Bancada da barbearia com máquinas e navalhas' },
 }
 
 export const barber = {
   name: 'Bruno Vieira',
-  role: 'Barbeiro e locsmaker em Itatiba',
+  role: 'Locs, tranças, corte & barba',
+  statement: 'Técnica, identidade e acabamento em cada trabalho.',
   quote: 'Reconstruindo raízes ancestrais',
   image: img('bruno-vieira'),
-  bio: 'Bruno cuida da barbearia da Meraki. Faz locs e tranças, e também todo o trabalho de corte e barba: degradê, desenho na navalha, platinado, corte feminino e infantil.',
 }
 
 // Avaliações reais do perfil da Meraki no Google, com o texto como foi escrito.

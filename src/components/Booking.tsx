@@ -1,35 +1,32 @@
-import { studio } from '../data/studio'
-
-const checklist = [
-  'A ideia ou o desenho que você quer',
-  'O local do corpo',
-  'O tamanho aproximado, em centímetros',
-  'Fotos de referência, se tiver',
-]
+import { process, studio, whatsappLink } from '../data/studio'
 
 export function Booking() {
-  const whatsapp = `https://wa.me/${studio.whatsapp}?text=${encodeURIComponent('Olá! Quero fazer um orçamento de tatuagem.')}`
-
   return (
     <section id="agendar" className="booking">
       <div className="container booking__inner">
-        <div className="booking__title">
-          <h2>Agendamento só pelo WhatsApp</h2>
-          <p className="muted">
-            Não tem agenda online. Cada tatuagem começa numa conversa: o Matheus entende a sua ideia, tira as
-            dúvidas e passa o orçamento antes de marcar a data.
-          </p>
-        </div>
+        <h2>{process.title}</h2>
 
-        <div className="booking__card">
-          <p className="booking__card-title">Na primeira mensagem, mande</p>
-          <ol className="checklist">
-            {checklist.map((item) => <li key={item}>{item}</li>)}
-          </ol>
-          <a href={whatsapp} target="_blank" rel="noreferrer" className="btn btn--accent booking__button">
-            Chamar no WhatsApp
+        <ol className="process">
+          {process.steps.map((step, i) => (
+            <li key={step} data-reveal="fade" style={{ '--delay': `${i * 200}ms` } as React.CSSProperties}>
+              <span>{String(i + 1).padStart(2, '0')}</span>
+              {step}
+            </li>
+          ))}
+        </ol>
+
+        <div className="booking__cta">
+          <a
+            href={whatsappLink('Olá! Quero fazer um orçamento de tatuagem.')}
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn--accent"
+          >
+            Quero agendar →
           </a>
-          <p className="booking__phone">{studio.phone}</p>
+          <p className="muted">
+            WhatsApp {studio.phone}. {process.note}
+          </p>
         </div>
       </div>
     </section>

@@ -40,7 +40,7 @@ export function Header() {
           <nav className="nav">
             {rightLinks.map((l) => <a key={l.href} href={l.href}>{l.label}</a>)}
           </nav>
-          <a href="#agendar" className="btn btn--accent btn--small header__cta">Agendar</a>
+          <a href="#agendar" className="btn btn--accent btn--small header__cta">Agendar horário</a>
         </div>
 
         <button
