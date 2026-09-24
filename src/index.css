@@ -204,6 +204,30 @@ p {
   color: var(--gold-light);
 }
 
+/* Links do menu nunca quebram em duas linhas */
+.nav a {
+  white-space: nowrap;
+}
+
+.header__cta {
+  white-space: nowrap;
+}
+
+@media (max-width: 1280px) {
+  .header__inner,
+  .header__right {
+    gap: 1.5rem;
+  }
+
+  .nav {
+    gap: 1.4rem;
+  }
+
+  .nav a {
+    font-size: 0.95rem;
+  }
+}
+
 .burger {
   display: none;
   grid-column: 3;
