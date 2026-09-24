@@ -122,10 +122,9 @@ export const barbershop = {
   ] satisfies BarberWork[] as BarberWork[],
   // Seção "Salão da barbearia", no mesmo formato do salão de tatuagem
   space: [
-    'A barbearia funciona no mesmo endereço da Meraki, com espaço próprio.',
-    'É onde o Bruno Vieira atende: locs e tranças, corte e barba.',
-    'Na parede fica o letreiro dourado da Barbearia Meraki, e na bancada ficam as máquinas, navalhas e tesouras do dia a dia.',
-    'O agendamento também é pelo WhatsApp da Meraki.',
+    'É na Meraki que Bruno Vieira recebe seus clientes para serviços de locs, tranças, corte e barba.',
+    'O ambiente traduz a identidade da barbearia em cada detalhe: o letreiro dourado da Meraki na parede, a bancada com as ferramentas de trabalho e um espaço pensado para que cada atendimento aconteça com calma e atenção.',
+    'Os horários são agendados previamente pelo WhatsApp da Meraki.',
   ],
   place: { src: img('barbearia-bancada'), alt: 'Bancada da barbearia com máquinas e navalhas' },
 }
